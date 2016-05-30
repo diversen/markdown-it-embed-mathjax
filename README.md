@@ -1,4 +1,4 @@
-# markdown-it-embed-mathjax-highlight.js
+# markdown-it-embed-mathjax.js
 
 Markdown-it with mathjax, and html5 video embed. 
 
@@ -19,4 +19,3 @@ Usage:
     var str = "<p>test</p># her er en test ![test](./test/test.mp4) $1 *2* 3$";
     console.log(md.render(str));
 
-# markdown-it-embed-mathjax

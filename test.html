@@ -1,0 +1,43 @@
+<html>
+    <head>
+    <title>test</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.7/styles/default.min.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src ="dist/markdown-it-embed-mathjax.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    preview: "none",
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    processEscapes: true
+                },
+                messageStyle: "none"
+                
+            });
+        
+    </script>
+        
+    </head>
+    <body>
+        <div class="output"></div>
+        <script>
+            var res1 = md.render("# her er en test ![test](http://techslides.com/demos/sample-videos/small.mp4)");
+            console.log(res1);
+            var res2 = md.render("~~~php\n<?php echo \"hello world\"; ?>");
+            console.log(res2);
+            var res3 = md.render('$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$');
+            
+            var res = res1 + res2 + res3;
+            $(document).ready(function () {
+                $( ".output" ).append( res );
+            });
+            
+            
+        </script>
+            
+        
+    </body>
+</html>
+
+    
