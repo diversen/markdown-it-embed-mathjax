@@ -22,6 +22,7 @@
     <body>
         <div class="output"></div>
         <script>
+            md = markdownItEmbedMathjax;
             var res1 = md.render("# her er en test ![test](http://techslides.com/demos/sample-videos/small.mp4)");
             console.log(res1);
             var res2 = md.render("~~~php\n<?php echo \"hello world\"; ?>");
