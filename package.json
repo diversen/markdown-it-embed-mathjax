@@ -24,7 +24,6 @@
   "dependencies": {
     "markdown-it": "^6.0.2",
     "markdown-it-html5-embed": "^0.3.2",
-    "markdown-it-mathjax": "^1.0.3",
-    "mathjax": "^2.6.1"
+    "markdown-it-mathjax": "^1.0.3"
   }
 }
