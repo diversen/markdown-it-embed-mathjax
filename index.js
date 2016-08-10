@@ -40,6 +40,9 @@ md.use(markdownitHTML5Embed, {
 // MathJax
 md.use(require('markdown-it-mathjax'));
 
+// Classy 
+md.use(require('markdown-it-classy'));
+
 // Export
 module.exports= md;
 

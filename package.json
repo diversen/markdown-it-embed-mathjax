@@ -23,6 +23,7 @@
   "homepage": "https://github.com/diversen/markdown-it-embed-mathjax#readme",
   "dependencies": {
     "markdown-it": "^6.0.2",
+    "markdown-it-classy": "^0.2.0",
     "markdown-it-html5-embed": "^0.3.2",
     "markdown-it-mathjax": "^1.0.3"
   }
