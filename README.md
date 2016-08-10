@@ -18,10 +18,11 @@ Usage:
     // include the lib.
     md = require('markdown-it-embed-mathjax');
 
-    // Change options as you like (as in markdown-it), e.g.: 
+    // Change markdown-it default options as you like, e.g.: 
     md.options.html = true;
 
     // Render a string
     var str = "<p>test</p># her er en test ![test](./test/test.mp4) $1 *2* 3$";
+    str+="\n\nPara with a CSS class{my-class}";
     console.log(md.render(str));
 
