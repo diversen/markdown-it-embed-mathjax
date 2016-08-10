@@ -1,7 +1,7 @@
 {
   "name": "markdown-it-embed-mathjax",
-  "version": "1.0.4",
-  "description": "A markdown-it collection lib with support for HTML5-embed, and mathjax.",
+  "version": "1.0.5",
+  "description": "A markdown-it collection lib with support for CSS classes (classy), HTML5-embed, and mathjax.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

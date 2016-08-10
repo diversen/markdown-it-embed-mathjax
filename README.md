@@ -26,3 +26,12 @@ Usage:
     str+="\n\nPara with a CSS class{my-class}";
     console.log(md.render(str));
 
+
+## Related
+
+- [bin](https://github.com/diversen/markdown-it-embed-mathjax-bin) - A CLI version
+
+
+## License
+
+MIT ©
