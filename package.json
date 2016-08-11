@@ -1,8 +1,11 @@
 {
   "name": "markdown-it-embed-mathjax",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A markdown-it collection lib with support for CSS classes (classy), HTML5-embed, and mathjax.",
   "main": "index.js",
+  "bin": {
+    "markdown-it-embed-mathjax": "./cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,10 +25,12 @@
   },
   "homepage": "https://github.com/diversen/markdown-it-embed-mathjax#readme",
   "dependencies": {
+    "get-stdin": "^5.0.1",
     "markdown-it": "^7.0.0",
     "markdown-it-classy": "^0.2.0",
     "markdown-it-decorate": "^1.2.1",
     "markdown-it-html5-embed": "^0.3.2",
-    "markdown-it-mathjax": "^1.0.3"
+    "markdown-it-mathjax": "^1.0.3",
+    "minimist": "^1.2.0"
   }
 }
