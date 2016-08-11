@@ -43,6 +43,9 @@ md.use(require('markdown-it-mathjax'));
 // Classy 
 md.use(require('markdown-it-classy'));
 
+// Decorate markdown-it-decorate
+md.use(require('markdown-it-decorate'));
+
 // Export
 module.exports= md;
 
