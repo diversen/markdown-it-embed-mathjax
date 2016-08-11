@@ -2,7 +2,7 @@
 
 // Minimist opts for arguments
 var opts = [];
-opts.boolean = ['help', 'html', 'xhtmlOut', 'breaks', 'linkify', 'typographer','decorate', 'embed', 'mathjax'];
+opts.boolean = ['help', 'html', 'xhtmlOut', 'breaks', 'linkify', 'typographer','decorate', 'embed', 'mathjax', 'classy'];
 opts.string = ['langPrefix', 'quotes'];
 var argv = require('minimist')(process.argv.slice(2), opts);
 var fs = require('fs');
