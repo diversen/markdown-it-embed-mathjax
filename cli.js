@@ -2,7 +2,7 @@
 
 // Minimist opts for arguments
 var opts = [];
-opts.boolean = ['help', 'html', 'xhtmlOut', 'breaks', 'linkify', 'typographer','decorate', 'embed', 'mathjax', 'classy'];
+opts.boolean = ['help', 'html', 'xhtmlOut', 'breaks', 'linkify', 'typographer','decorate', 'embed', 'mathjax'];
 opts.string = ['langPrefix', 'quotes'];
 var argv = require('minimist')(process.argv.slice(2), opts);
 var fs = require('fs');
@@ -30,8 +30,7 @@ var md = require('markdown-it')({
     quotes: '“”‘’',
     embed: false,
     decorate: false,
-    mathjax: false,
-    classy: false
+    mathjax: false
     
 });
 
@@ -81,10 +80,6 @@ function enableMathjax () {
     md.use(require('markdown-it-mathjax'));
 }
 
-function enableClassy () {
-    md.use(require('markdown-it-classy'));
-}
-
 function enableDecorate () {
     md.use(require('markdown-it-decorate'));
 }
@@ -103,9 +98,6 @@ for (key in md.options) {
 	}
         if (key == 'decorate' && argvVal != false) {
 	    enableDecorate();
-	}
-        if (key == 'classy' && argvVal != false) {
-	    enableClassy();
 	}
         if (key == 'mathjax' && argvVal != false) {
 	    enableMathjax();

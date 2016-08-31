@@ -4,8 +4,6 @@ Markdown-it with mathjax, and html5 video embed
 
 [Video embed](https://www.npmjs.com/package/markdown-it-html5-embed)
 
-[CSS classes](https://github.com/andrey-p/markdown-it-classy)
-
 [Mathjax](https://www.npmjs.com/package/markdown-it-mathjax)
 
 [Decorate](https://github.com/rstacruz/markdown-it-decorate) 
