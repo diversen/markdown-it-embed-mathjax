@@ -39,7 +39,7 @@ Example with stdin from a shell:
 
 Example with file(s): 
      
-    markdown-it-embed-mathjax-bin README.md --linkify --html --breaks
+    markdown-it-embed-mathjax README.md --linkify --html --breaks
 
 Options are the same as markdown-it options:
 
