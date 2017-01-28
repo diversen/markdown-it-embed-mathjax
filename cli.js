@@ -2,15 +2,15 @@
 
 // Minimist opts for arguments
 var opts = [];
-opts.boolean = ['help', 'html', 'xhtmlOut', 'breaks', 'linkify', 'typographer','decorate', 'embed', 'mathjax'];
+opts.boolean = ['help','h', 'html', 'xhtmlOut', 'breaks', 'linkify', 'typographer','decorate', 'embed', 'mathjax'];
 opts.string = ['langPrefix', 'quotes'];
-var argv = require('minimist')(process.argv.slice(2), opts);
+
+var m = require('minimist-mini')(opts);
 var fs = require('fs');
 var path = require('path');
 
-// var md = require('markdown-it')();
 
-var md = require('markdown-it')({
+var mdOptions = {
     //highlight: highlighter, 
     html: false, // Enable HTML tags in source
     xhtmlOut: true, // Use '/' to close single tags (<br />).
@@ -31,37 +31,26 @@ var md = require('markdown-it')({
     embed: false,
     decorate: false,
     mathjax: false
-    
-});
+};
 
+var md = require('markdown-it')(
+    mdOptions
+);
 
-// Get value from object and key
-var getValFromKey = function (key, obj) {
-    if (obj.hasOwnProperty(key)) {
-        return obj[key];
-    }
-    return undefined;
-}
-
-if (getValFromKey ('help', argv)) {
-    // console.log(__filename);
-    // Current dir
-    var dirname = path.dirname(__filename);
-    var help = fs.readFileSync(dirname + '/README.md', {encoding: 'utf8'});
-    console.log(help);
+if (m.get('help') || m.get('h')) {
+    m.helpMessage();
     process.exit(0);
 }
 
 // Set mode option
-var mode = getValFromKey('mode', argv);
-if (mode == undefined ) {
+var mode = m.get('mode');
+if (!mode) {
     mode = 'default';
 }
 
 function enableEmbed() {
     // Use html5embed for videos
     var markdownitHTML5Embed = require('markdown-it-html5-embed');
-
     var options = {
 
         html5embed: {
@@ -84,25 +73,38 @@ function enableDecorate () {
     md.use(require('markdown-it-decorate'));
 }
 
-// Set markdown otions
-for (key in md.options) {
-    var argvVal = getValFromKey(key, argv);
-    if (argvVal === undefined) {
-        // Do nothing
-    } else {
-        md.options[key] = argvVal;
-	
-        
-        if (key == 'embed' && argvVal != false) {
-	    enableEmbed();
-	}
-        if (key == 'decorate' && argvVal != false) {
-	    enableDecorate();
-	}
-        if (key == 'mathjax' && argvVal != false) {
-	    enableMathjax();
-	}
-    }
+
+// All boolean opts
+opts.boolean.forEach( function (element) {
+    //console.log(element);
+    md.options[element] = m.get(element);
+});
+
+var langPrefix = m.get('langPrefix');
+if (langPrefix) {
+    md.options[langPrefix] = langPrefix;
+}
+
+var langPrefix = m.get('langPrefix');
+if (langPrefix) {
+    md.options[langPrefix] = langPrefix;
+}
+
+var quotes = m.get('quotes');
+if (quotes) {
+    md.options[quotes] = quotes;
+}
+
+if (m.get('embed')) {
+    enableEmbed();
+}
+
+if (m.get('decorate')) {
+    enableDecorate();
+}
+
+if (m.get('mathjax')) {
+    enableMathjax();
 }
 
 // StdIn
@@ -125,7 +127,7 @@ var readFiles = function (files) {
 }
 
 
-var files = getValFromKey('_', argv);
+var files = m.get('_');
 if (files.length == 0) {
     readStdin();
 } else {
