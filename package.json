@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-embed-mathjax",
-  "version": "1.0.16",
+  "version": "1.0.18",
   "description": "A markdown-it collection lib with support for CSS classes (classy), HTML5-embed, and mathjax.",
   "main": "index.js",
   "bin": {

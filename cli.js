@@ -42,12 +42,6 @@ if (m.get('help') || m.get('h')) {
     process.exit(0);
 }
 
-// Set mode option
-var mode = m.get('mode');
-if (!mode) {
-    mode = 'default';
-}
-
 function enableEmbed() {
     // Use html5embed for videos
     var markdownitHTML5Embed = require('markdown-it-html5-embed');

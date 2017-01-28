@@ -28,14 +28,14 @@ Markdown-it with mathjax, and html5 video embed
 
 # Usage as CLI command
 
-    npm install -g markdown-it-embed-mathjax-bin
+    npm install -g markdown-it-embed-mathjax
 
 Translate a string to a markdown-it rendered string (with option for CSS classes, mp4 embedding and mathjax): 
 Reads from stdin or file(s), and outputs to stdout. 
 
 Example with stdin from a shell: 
 
-    echo "A test with a auto link: http://github.com/diversen"  | markdown-it-embed-mathjax-bin --linkify
+    echo "A test with a auto link: http://github.com/diversen"  | markdown-it-embed-mathjax --linkify
 
 Example with file(s): 
      
@@ -45,8 +45,6 @@ Options are the same as markdown-it options:
 
     opts.boolean = ['help', 'html', 'xhtmlOut', 'breaks', 'linkify', 'typographer','decorate', 'embed', 'mathjax'];
     opts.string = ['langPrefix', 'quotes'];
-
-Beside you can set mode: --mode=commonmark (or zero or default)
 
 Video (like images):
 
